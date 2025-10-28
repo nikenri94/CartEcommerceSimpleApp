@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// 🛍️ Data produk: nama, harga, dan path gambar
+// Data produk: nama, harga, dan path gambar
 final productData = {
   'Topi': {'price': 50000, 'image': 'assets/images/topi.jpg'},
   'Jaket': {'price': 150000, 'image': 'assets/images/jaket.jpg'},
   'Jeans': {'price': 200000, 'image': 'assets/images/jeans.jpg'},
 };
 
-// 1️⃣ Provider untuk cart
+// Provider untuk cart
 final cartProvider = StateNotifierProvider<CartNotifier, Map<String, int>>((
   ref,
 ) {
   return CartNotifier();
 });
 
-// 2️⃣ Logika keranjang belanja
+// Logika keranjang belanja
 class CartNotifier extends StateNotifier<Map<String, int>> {
   CartNotifier() : super({'Topi': 1, 'Jaket': 1, 'Jeans': 1});
 
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// 3️⃣ Halaman utama keranjang
+// Halaman utama keranjang
 class CartPage extends ConsumerWidget {
   const CartPage({super.key});
 
@@ -181,3 +181,4 @@ class CartPage extends ConsumerWidget {
     );
   }
 }
+
